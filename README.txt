@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: Zoefff
-Donate link: http://werkaandemuur.nl/
+Contributors: Zoefff, Ugoku
+Donate link: https://www.werkaandemuur.nl/
 Tags: wadm, art, werk aan de muur, oh my prints
-Requires at least: 3.0.1
-Tested up to: 5.2
+Requires at least: 4.9
+Tested up to: 5.4
 Stable tag: 1.1.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -86,73 +86,57 @@ Please contact us at info@werkaandemuur.nl with any questions or suggestions. We
 
 == Changelog ==
 
-= 1.0 =
+= 1.1.12 =
+* Bugfix, feed abstract cannot really be abstract because it's used for connection testing
 
-* First release
+= 1.1.11 =
+* Implement more aggressive caching; cache errors too (but retry within 10 minutes)
+* Prefer cURL over file_get_contents
 
-= 1.0.1 =
+= 1.1.10 =
+* Tweaks to ease debugging in case of a problem
 
-* Added support for custom artwork order (by title or date)
+= 1.1.9 =
+* Allow sorting artlists and albums by rating
 
-= 1.0.2 =
+= 1.1.8 =
+* Fix PHP notice
 
-* Tweaked some styling rules to counter-effect specific theme styling
-
-= 1.1 =
-
-* Don't print empty navigation containers
-* Basic validation of admin settings input
-* New tag [wadm_artwork] to fetch a single artwork
-* Increase max per page limit to allow for 3x11 artworks
-
-= 1.1.1 =
-
-* Added some plugin configuration and connection tests
-
-= 1.1.2 =
-
-* Use correct link and title for single artworks
-
-= 1.1.3 =
-
-* Display artist name in listing when available
-
-= 1.1.4 =
-
-* Reset some widths to prevent theme styling from overriding wadm plugin styling
-
-= 1.1.5 =
-
-* Use HTTPS image url when ssl is enabled
+= 1.1.7 =
+* Fix another PHP Warning
 
 = 1.1.6 =
-
 * Made getHtml compatible with abstract method to prevent an PHP Warning
 * Styling tweak to inherit line-height
 * Added code which can replace file_get_contents calls with a CURL call. Commented code in feed-abstract, if you know what you're doing, you're welcome to use it.
 * Introduced a 'tools' directory with script to debug API connection issues
 
-= 1.1.7 =
+= 1.1.5 =
+* Use HTTPS image url when ssl is enabled
 
-* Fix another PHP Warning
+= 1.1.4 =
+* Reset some widths to prevent theme styling from overriding wadm plugin styling
 
-= 1.1.8 =
+= 1.1.3 =
+* Display artist name in listing when available
 
-* Fix PHP notice
+= 1.1.2 =
+* Use correct link and title for single artworks
 
-= 1.1.9 =
+= 1.1.1 =
+* Added some plugin configuration and connection tests
 
-* Allow sorting artlists and albums by rating
+= 1.1 =
+* Don't print empty navigation containers
+* Basic validation of admin settings input
+* New tag [wadm_artwork] to fetch a single artwork
+* Increase max per page limit to allow for 3x11 artworks
 
-= 1.1.10 =
+= 1.0.2 =
+* Tweaked some styling rules to counter-effect specific theme styling
 
-* Tweaks to ease debugging in case of a problem
+= 1.0.1 =
+* Added support for custom artwork order (by title or date)
 
-= 1.1.11 =
-
-* Implement more aggressive caching; cache errors too (but retry within 10 minutes)
-* Prefer cURL over file_get_contents
-
-= 1.1.12 =
-
-* Bugfix, feed abstract cannot really be abstract because it's used for conneciton testing
+= 1.0 =
+* First release
