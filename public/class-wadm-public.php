@@ -73,7 +73,7 @@ class Wadm_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wadm-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wadm-public.css', [], $this->version, 'all' );
 
 	}
 
@@ -83,11 +83,11 @@ class Wadm_Public {
 	public function artlist_shortcode($attributesRaw)
 	{
 		// Parse attributes to set defaults and remove any unsupported attributes
-		$attributes = shortcode_atts(array(
+		$attributes = shortcode_atts([
 			'limit' => 12,
 			'columns' => 3,
 			'order' => null,
-		), $attributesRaw);
+        ], $attributesRaw);
 
 		// Fetch feed and get HTML
 		$feed = new Wadm_Feed_Artlist(get_option('wadm_artist_id'));
@@ -120,12 +120,12 @@ class Wadm_Public {
 	public function album_shortcode($attributesRaw)
 	{
 		// Parse attributes to set defaults and remove any unsupported attributes
-		$attributes = shortcode_atts(array(
+		$attributes = shortcode_atts([
 			'albumid' => null, // Shortcode attributes are always lowercase
 			'limit' => 12,
 			'columns' => 3,
 			'order' => null,
-		), $attributesRaw);
+        ], $attributesRaw);
 
 		if (!$attributes['albumid'])
 			return false;
@@ -160,9 +160,9 @@ class Wadm_Public {
 	public function artwork_shortcode($attributesRaw)
 	{
 		// Parse attributes to set defaults and remove any unsupported attributes
-		$attributes = shortcode_atts(array(
+		$attributes = shortcode_atts([
 			'artid' => null, // Shortcode attributes are always lowercase
-		), $attributesRaw);
+        ], $attributesRaw);
 
 		if (!$attributes['artid'])
 			return false;

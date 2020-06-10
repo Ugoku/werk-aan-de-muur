@@ -30,6 +30,6 @@ class Wadm_Admin_Notice
 
 	public function add()
 	{
-		add_action('admin_notices', array($this, 'notice'));
+		add_action('admin_notices', [$this, 'notice']);
 	}
 }

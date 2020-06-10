@@ -30,10 +30,10 @@ class Wadm_Admin_Setting
 		add_settings_field(
 			$this->_settingName,
 			__( $title, Wadm::TEXT_DOMAIN ),
-			array( $this, 'callBack' ),
+			[$this, 'callBack'],
 			$this->_pluginName,
 			$this->_pluginName . '_' . $this->_sectionLabel,
-			array( 'label_for' => $this->_settingName )
+			['label_for' => $this->_settingName]
 		);
 
 		$this->_register();
@@ -60,13 +60,13 @@ class Wadm_Admin_Setting
 	 */
 	public function callBack()
 	{
-		$attributes = array(
+		$attributes = [
 			'type' => 'text',
 			'class' => 'regular-text',
 			'name' => $this->_settingName,
 			'id' => $this->_settingName,
 			'value' => get_option($this->_settingName),
-		);
+        ];
 
 		if (isset($this->_validationOptions['type']))
 			$attributes['type' ] = $this->_validationOptions['type'];

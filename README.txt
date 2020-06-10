@@ -3,6 +3,7 @@ Contributors: Zoefff, Ugoku
 Donate link: https://www.werkaandemuur.nl/
 Tags: wadm, art, werk aan de muur, oh my prints
 Requires at least: 4.9
+Requires PHP: 5.4.0
 Tested up to: 5.4
 Stable tag: 1.1.12
 License: GPLv2 or later

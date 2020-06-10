@@ -43,28 +43,28 @@ class Wadm_Admin {
 	/**
 	 * Available admin settings for this plugin
 	 */
-	protected $_settings = array(
-		'artist_id' => array(
+	protected $_settings = [
+		'artist_id' => [
 			'name' => 'Artist ID',
 			'description' => 'Your artist ID as found in your dashboard.',
-			'validation' => array(
+			'validation' => [
 				'type' => 'number',
 				'required' => true,
 				'maxlength' => 10,
-			),
-		),
-		'api_key' => array(
+            ],
+        ],
+		'api_key' => [
 			'name' => 'API Key',
 			'description' => 'Your 40 character API key.',
-			'validation' => array(
+			'validation' => [
 				'type' => 'text',
 				'required' => true,
 				'minlength' => 40,
 				'maxlength' => 40,
 				'pattern' => '[a-f0-9]{40}'
-			),
-		),
-	);
+            ],
+        ],
+    ];
 
 	/**
 	 * The API key as stored in the database
@@ -209,7 +209,7 @@ class Wadm_Admin {
 			__( 'Werk aan de Muur', Wadm::TEXT_DOMAIN ),
 			'manage_options',
 			$this->plugin_name,
-			array( $this, 'display_options_page' )
+			[$this, 'display_options_page']
 		);
 	}
 

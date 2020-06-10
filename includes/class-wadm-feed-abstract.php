@@ -5,7 +5,7 @@ class Wadm_Feed_Abstract
     /**
      * @var array $_urlParameters
      */
-    protected $_urlParameters = array();
+    protected $_urlParameters = [];
 
     /**
      * @var $_rawFeed
@@ -116,14 +116,14 @@ class Wadm_Feed_Abstract
         $headers = $this->_getHeaders();
         $headers[] = "Authorization: Basic " . base64_encode($artistId . ':' . $apiKey);
 
-        $options = array('http' =>
-            array(
+        $options = ['http' =>
+            [
                 'method' => 'GET',
                 'header' => implode("\r\n", $headers),
                 'ignore_errors' => true,
                 'timeout' => 10,
-            ),
-        );
+            ],
+        ];
 
         return stream_context_create($options);
     }

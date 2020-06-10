@@ -84,13 +84,13 @@ class Wadm_Feed_Paged extends Wadm_Feed_Abstract
 	 */
 	public function setOrder($order)
 	{
-		$allowed = array(
+		$allowed = [
 			'date_asc',
 			'date_desc',
 			'title_asc',
 			'title_desc',
 			'rating',
-		);
+        ];
 
 		if (!in_array($order, $allowed))
 			return false;
@@ -170,12 +170,12 @@ class Wadm_Feed_Paged extends Wadm_Feed_Abstract
 		if (!$data || !isset($data->stats))
 			return false;
 
-		$options = array(
+		$options = [
 			'base' => add_query_arg($this->_pageName, '%#%'),
 			'format' => '?' . $this->_pageName . '=%#%',
 			'total' => $data->stats->totalPages,
 			'current' => $data->stats->currentPage,
-		);
+        ];
 
 		$pagination = paginate_links($options);
 

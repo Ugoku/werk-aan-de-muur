@@ -55,7 +55,7 @@ class Wadm_Admin_Section
 		add_settings_section(
 			$this->_pluginName . '_' . $this->_sectionLabel,
 			$this->_sectionName,
-			array( $this, 'callBack'),
+			[$this, 'callBack'],
 			$this->_pluginName
 		);
 	}

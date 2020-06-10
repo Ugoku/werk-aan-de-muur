@@ -25,8 +25,8 @@ define('API_KEY', '');
  */
 function getStreamContext()
 {
-	$options = array('http' =>
-		array(
+	$options = ['http' =>
+		[
 			'method' => 'GET',
 			'header' =>
 				"Authorization: Basic " . base64_encode(API_ARTIST_ID . ':' . API_KEY) . "\r\n"
@@ -34,8 +34,8 @@ function getStreamContext()
 			,
 //			'ignore_errors' => true,
 			'timeout' => 10,
-		),
-	);
+        ],
+    ];
 
 	// Dump created stream context options
 	var_dump($options);
