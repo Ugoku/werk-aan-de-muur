@@ -52,7 +52,7 @@ $result = file_get_contents(BASE_URL . 'connectiontest', false, getStreamContext
 var_dump($result);
 var_dump(json_decode($result));
 
-echo '<hr />';
+echo '<hr>';
 
 // Do an authentication test request
 echo 'Authenticationtest:';
@@ -63,4 +63,4 @@ $result = file_get_contents(BASE_URL . 'authenticationtest', false, getStreamCon
 var_dump($result);
 var_dump(json_decode($result));
 
-echo '<hr />';
+echo '<hr>';

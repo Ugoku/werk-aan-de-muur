@@ -227,7 +227,7 @@ class Wadm_Admin {
 	public function register_setting()
 	{
 		$generalSection = new Wadm_Admin_Section($this->plugin_name, 'connection_settings', __('Connection settings', Wadm::TEXT_DOMAIN));
-		$generalSection->setDescription(__('Your personal API key and artist ID can be found on your <a href="http://www.werkaandemuur.nl/nl/Wordpress-plugin/474">Werk aan de Muur dashboard</a>. Please note you`ll have to be logged in to open this page.', Wadm::TEXT_DOMAIN));
+		$generalSection->setDescription(__('Your personal API key and artist ID can be found on your <a href="https://www.werkaandemuur.nl/nl/Wordpress-plugin/474">Werk aan de Muur dashboard</a>. Please note you`ll have to be logged in to open this page.', Wadm::TEXT_DOMAIN));
 
 		foreach ($this->_settings as $key => $options)
 		{

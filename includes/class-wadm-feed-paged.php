@@ -138,20 +138,20 @@ class Wadm_Feed_Paged extends Wadm_Feed_Abstract
 		return '
 			<li class="wadm-artwork">
 				<div class="wadm-artwork-art">
-					<a href="' . $artwork->link . '" class="wadm-artwork-link" title="' . htmlentities($artwork->title) . '" target="_blank">
-						<img src="' . $this->getImageUrl($artwork, '500x500') . '" alt="' . htmlentities($artwork->title) . '" />
+					<a href="' . $artwork->link . '" class="wadm-artwork-link" title="' . htmlentities($artwork->title) . '" target="_blank" rel="noreferrer noopener">
+						<img src="' . $this->getImageUrl($artwork, '500x500') . '" alt="' . htmlentities($artwork->title) . '">
 					</a>
 				</div>
 
 				<div class="wadm-artwork-meta">
 					<div class="wadm-artwork-title">
-						<a href="' . $artwork->link . '" class="wadm-artwork-link" title="' . htmlentities($artwork->title) . '" target="_blank">
+						<a href="' . $artwork->link . '" class="wadm-artwork-link" title="' . htmlentities($artwork->title) . '" target="_blank" rel="noreferrer noopener">
 							<span class="primary-item">' . $artwork->title . '</span>
 							' . (isset($artwork->artist) ? '<span class="secondary-item">' . $artwork->artist . '</span>' : '') . '
 						</a>
 					</div>
 					<p class="wadm-artwork-price">
-						<a href="' . $artwork->link . '" class="wadm-artwork-link" title="' . htmlentities($artwork->title) . '" target="_blank">
+						<a href="' . $artwork->link . '" class="wadm-artwork-link" title="' . htmlentities($artwork->title) . '" target="_blank" rel="noreferrer noopener">
 							<span>' . $artwork->pricing[0] . '</span> ' . __('Canvas', Wadm::TEXT_DOMAIN) . ' ' . $artwork->pricing[1] . 'x' . $artwork->pricing[2] . '
 						</a>
 					</p>
@@ -170,12 +170,12 @@ class Wadm_Feed_Paged extends Wadm_Feed_Abstract
 		if (!$data || !isset($data->stats))
 			return false;
 
-		$options = [
+		$options = array(
 			'base' => add_query_arg($this->_pageName, '%#%'),
 			'format' => '?' . $this->_pageName . '=%#%',
 			'total' => $data->stats->totalPages,
 			'current' => $data->stats->currentPage,
-        ];
+		);
 
 		$pagination = paginate_links($options);
 
