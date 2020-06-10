@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://werkaandemuur.nl/
+ * @link              https://www.werkaandemuur.nl/
  * @since             1.0.0
  * @package           Wadm
  *
  * @wordpress-plugin
  * Plugin Name:       Werk aan de Muur
- * Plugin URI:        http://werkaandemuur.nl/wordpress-plugin/
+ * Plugin URI:        https://www.werkaandemuur.nl/
  * Description:       Use this plugin to display artworks on your own Wordpress site.
  * Version:           1.1.12
  * Author:            Sander van Leeuwen
- * Author URI:        http://werkaandemuur.nl/
+ * Author URI:        https://www.werkaandemuur.nl/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wadm
@@ -29,27 +29,6 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-
-/**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-wadm-activator.php
- */
-function activate_wadm() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wadm-activator.php';
-	Wadm_Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-wadm-deactivator.php
- */
-function deactivate_wadm() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wadm-deactivator.php';
-	Wadm_Deactivator::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_wadm' );
-register_deactivation_hook( __FILE__, 'deactivate_wadm' );
 
 /**
  * The core plugin class that is used to define internationalization,
